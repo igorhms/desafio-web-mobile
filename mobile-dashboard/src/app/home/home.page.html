@@ -1,5 +1,5 @@
 <ion-header [translucent]="true">
-  <ion-toolbar color="dark">
+  <ion-toolbar>
     <ion-title>Dashboard Mobile</ion-title>
     <ion-buttons slot="end">
       <ion-button fill="clear" (click)="applyFilters()">
@@ -19,7 +19,7 @@
   <ion-card class="api-info-card">
     <ion-card-content>
       <ion-icon name="cloud-outline"></ion-icon>
-      <span>Fonte de dados: <strong>Open-Meteo API</strong></span>
+      <span>Fonte de dados: <strong><a href="https://open-meteo.com/en/docs" target="_blank" rel="noopener noreferrer">Open-Meteo API</a></strong></span>
     </ion-card-content>
   </ion-card>
 
@@ -99,7 +99,6 @@
 
   <ion-card *ngIf="state().cacheMessage" class="info-card" color="tertiary">
     <ion-card-content>
-      <ion-icon name="cloud-offline-outline"></ion-icon>
       {{ state().cacheMessage }}
     </ion-card-content>
   </ion-card>

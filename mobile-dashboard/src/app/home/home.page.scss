@@ -1,3 +1,23 @@
+ion-header {
+  ion-toolbar {
+    --background: #f8fafc;
+    --color: #0f172a;
+    --border-color: #e2e8f0;
+    border-bottom: 1px solid var(--border-color);
+  }
+}
+
+// Suporte para tema escuro
+@media (prefers-color-scheme: dark) {
+  ion-header {
+    ion-toolbar {
+      --background: #111a2c;
+      --color: #e2e8f0;
+      --border-color: #1f2937;
+    }
+  }
+}
+
 .api-info-card {
   margin: 1rem;
   border-radius: 1rem;
@@ -17,6 +37,17 @@
     strong {
       color: var(--ion-color-dark);
       font-weight: 600;
+
+      a {
+        color: inherit;
+        text-decoration: none;
+        transition: color 0.2s ease;
+
+        &:hover {
+          color: var(--ion-color-primary);
+          text-decoration: underline;
+        }
+      }
     }
   }
 }
