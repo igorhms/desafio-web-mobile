@@ -1,0 +1,23 @@
+<mat-card class="kpi-card">
+  <div class="kpi-card__header">
+    <span class="kpi-card__label">{{ kpi.label }}</span>
+    <mat-icon [ngClass]="kpi.trend">
+      @switch (kpi.trend) {
+        @case ('up') { trending_up }
+        @case ('down') { trending_down }
+        @default { drag_handle }
+      }
+    </mat-icon>
+  </div>
+
+  <div class="kpi-card__value">
+    <span>{{ formatValue() }}</span>
+    <small>{{ unit }}</small>
+  </div>
+
+  @if (kpi.helperText) {
+    <p class="kpi-card__helper">{{ kpi.helperText }}</p>
+  }
+</mat-card>
+
+

@@ -1,0 +1,14 @@
+<mat-card class="chart-card">
+  <header>
+    <div>
+      <p class="chart-card__eyebrow">{{ subtitle }}</p>
+      <h3>{{ title }}</h3>
+    </div>
+  </header>
+
+  <div class="chart-card__body">
+    <div echarts [options]="options" class="chart-card__chart" aria-label="{{ title }}"></div>
+  </div>
+</mat-card>
+
+

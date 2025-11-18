@@ -1,0 +1,7 @@
+{
+  "name": "mobile-dashboard",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

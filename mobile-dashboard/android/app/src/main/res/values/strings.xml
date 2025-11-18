@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">mobile-dashboard</string>
+    <string name="title_activity_main">mobile-dashboard</string>
+    <string name="package_name">com.desafio.dashboard</string>
+    <string name="custom_url_scheme">com.desafio.dashboard</string>
+</resources>
