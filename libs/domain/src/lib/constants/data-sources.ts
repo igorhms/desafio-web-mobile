@@ -1,11 +1,4 @@
-import { DataSourceType } from '../models';
-
-export interface DataSourceOption {
-  id: DataSourceType;
-  title: string;
-  description: string;
-  unit: string;
-}
+import { DataSourceType, DataSourceOption } from '../types';
 
 export const DATA_SOURCE_OPTIONS: DataSourceOption[] = [
   {

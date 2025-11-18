@@ -1,4 +1,4 @@
-import { DataPoint, Kpi } from '../models';
+import { DataPoint, Kpi, AggregatedSeries } from '../types';
 
 const toNumber = (value: number | null | undefined): number => (Number.isFinite(value) ? Number(value) : 0);
 
@@ -47,10 +47,8 @@ export const calculateKpis = (points: DataPoint[]): Kpi[] => {
   ];
 };
 
-export interface AggregatedSeries {
-  labels: string[];
-  values: number[];
-}
+// Re-exporta AggregatedSeries para compatibilidade
+export type { AggregatedSeries };
 
 const formatDay = (date: Date): string =>
   date.toLocaleDateString('pt-BR', { day: '2-digit', month: '2-digit' });

@@ -16,6 +16,7 @@
   --card-shadow: 0 20px 40px rgba(15, 23, 42, 0.08);
   --input-background: #ffffff;
   --input-border-hover: #cbd5f5;
+  --mat-divider-color: var(--border);
 }
 
 :root[data-theme='dark'] {
@@ -29,6 +30,7 @@
   --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.4);
   --input-background: #0f172a;
   --input-border-hover: #4c1d95;
+  --mat-divider-color: color-mix(in srgb, var(--text-secondary) 30%, transparent);
 }
 
 *,
@@ -122,5 +124,11 @@ mat-card {
 .mat-mdc-button.mat-mdc-button-base,
 .mat-mdc-flat-button.mat-mdc-button-base {
   font-weight: 600;
+}
+
+// Divider styles
+.mat-mdc-divider {
+  margin: 1.5rem 0;
+  opacity: 1;
 }
 

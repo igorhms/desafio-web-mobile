@@ -4,13 +4,7 @@ import { Observable, catchError, map, throwError } from 'rxjs';
 import dayjs from 'dayjs';
 import { DashboardDataset, DashboardFilters, DataPoint, DataSourceType } from '@domain';
 import { calculateKpis } from '@domain';
-
-interface OpenMeteoResponse {
-  hourly: {
-    time: string[];
-    temperature_2m: number[];
-  };
-}
+import { OpenMeteoResponse } from '../../types';
 
 
 @Injectable({

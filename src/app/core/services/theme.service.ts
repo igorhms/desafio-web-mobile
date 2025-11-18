@@ -1,7 +1,6 @@
 import { DOCUMENT } from '@angular/common';
 import { Injectable, effect, inject, signal } from '@angular/core';
-
-export type Theme = 'light' | 'dark';
+import { Theme } from '../../types';
 
 const STORAGE_KEY = 'dashboard-theme';
 

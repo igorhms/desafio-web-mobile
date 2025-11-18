@@ -2,8 +2,7 @@ import type { EChartsOption } from 'echarts';
 import dayjs from 'dayjs';
 import {
   DashboardDataset,
-  buildDailyAggregation,
-  buildDistribution
+  buildDailyAggregation
 } from '@domain';
 
 const isBrowser = typeof window !== 'undefined';
@@ -87,33 +86,5 @@ export const buildAggregationChart = (dataset: DashboardDataset): EChartsOption 
   };
 };
 
-export const buildDistributionChart = (dataset: DashboardDataset): EChartsOption => {
-  const distribution = buildDistribution(dataset.points);
-
-  return {
-    tooltip: { trigger: 'item' },
-    legend: {
-      orient: 'horizontal',
-      bottom: 0,
-      textStyle: { color: color('--ion-color-medium', '#94a3b8') }
-    },
-    series: [
-      {
-        type: 'pie',
-        radius: ['35%', '70%'],
-        itemStyle: {
-          borderRadius: 6,
-          borderColor: color('--ion-background-color', '#0b1120'),
-          borderWidth: 2
-        },
-        label: { formatter: '{b}\n{d}%' },
-        data: distribution.labels.map((label, index) => ({
-          name: label,
-          value: distribution.values[index]
-        }))
-      }
-    ]
-  };
-};
 
 

@@ -4,7 +4,7 @@ Implementação completa do desafio com uma experiência unificada entre Web (An
 
 ## Visão geral
 
-- **Web** (`/src`): dashboard moderno com filtros por intervalo de datas, dark/light mode, loaders, mensagens de erro, layout responsivo e 3 gráficos com ECharts.
+- **Web** (`/src`): dashboard moderno com filtros por intervalo de datas, dark/light mode, loaders, mensagens de erro, layout responsivo e 2 gráficos com ECharts.
 - **Mobile** (`/mobile-dashboard`): mesma tela com componentes Ionic, suporte a pull-to-refresh e cache local via Capacitor Preferences para uso offline.
 - **Domínio compartilhado** (`/libs/domain`): tipos, utilitários de análise (KPIs, agregações) e catálogo de fontes de dados reutilizados pelos dois apps.
 
@@ -16,7 +16,6 @@ Os dados são normalizados para gerar:
 - 4 KPIs (média, máximo, mínimo, variação %)
 - Gráfico de linha/área (série temporal)
 - Gráfico de barras (média diária)
-- Gráfico de pizza (distribuição por dia da semana)
 
 ## Como executar
 

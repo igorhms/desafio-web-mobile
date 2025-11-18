@@ -19,15 +19,9 @@ import { ThemeToggleComponent } from '../../shared/components/theme-toggle/theme
 import { KpiCardComponent } from '../../shared/components/kpi-card/kpi-card.component';
 import { ChartCardComponent } from '../../shared/components/chart-card/chart-card.component';
 import { DashboardDataset, Kpi } from '@domain';
-import { buildAggregationChart, buildDistributionChart, buildTimeseriesChart } from './utils/chart-options.builder';
+import { DashboardViewState } from '../../types';
+import { buildAggregationChart, buildTimeseriesChart } from './utils/chart-options.builder';
 import dayjs from 'dayjs';
-
-interface DashboardViewState {
-  dataset: DashboardDataset | null;
-  loading: boolean;
-  error?: string | null;
-  lastUpdated?: string;
-}
 
 const DEFAULT_RANGE_DAYS = 7;
 
@@ -87,10 +81,6 @@ export class DashboardComponent {
     return dataset ? buildAggregationChart(dataset) : null;
   });
 
-  protected readonly pieChartOptions = computed(() => {
-    const dataset = this.state().dataset;
-    return dataset ? buildDistributionChart(dataset) : null;
-  });
 
   constructor() {
     this.filtersForm.valueChanges.pipe(skip(1), takeUntilDestroyed(this.destroyRef)).subscribe((value) => {

@@ -9,19 +9,12 @@ import {
   DashboardFilters,
   Kpi
 } from '@domain';
+import { DashboardState } from '../types';
 import { DashboardDataService } from '../services/dashboard-data.service';
 import {
   buildAggregationChart,
-  buildDistributionChart,
   buildTimeseriesChart
 } from '../utils/chart-options';
-
-interface DashboardState {
-  dataset: DashboardDataset | null;
-  loading: boolean;
-  error: string | null;
-  cacheMessage: string | null;
-}
 
 @Component({
   selector: 'app-home',
@@ -66,10 +59,6 @@ export class HomePage {
     return dataset ? buildAggregationChart(dataset) : null;
   });
 
-  protected readonly pieChartOptions = computed(() => {
-    const dataset = this.state().dataset;
-    return dataset ? buildDistributionChart(dataset) : null;
-  });
 
   ionViewWillEnter(): void {
     this.loadDataset();

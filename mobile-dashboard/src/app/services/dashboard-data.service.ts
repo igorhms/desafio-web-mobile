@@ -10,13 +10,7 @@ import {
   DataSourceType,
   calculateKpis
 } from '@domain';
-
-interface OpenMeteoResponse {
-  hourly: {
-    time: string[];
-    temperature_2m: number[];
-  };
-}
+import { OpenMeteoResponse } from '../types';
 
 
 @Injectable({
